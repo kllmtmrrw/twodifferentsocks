@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two Different Socks – Passt nicht zusammen. Passt perfekt.</title>
+  <meta name="description" content="Two Different Socks ist das Dach über Places4Kids, VINWEAR, Mein Wunsch ist … und allem, was noch kommt.">
+  <link rel="icon" href="/assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <!-- Schriften: siehe README, Abschnitt „Schriften lokal einbinden“ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo-stamp"><img src="/assets/img/logo_ink.png" alt="Two Different Socks – zur Startseite" width="1071" height="360"></a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/#projekte">Projekte</a>
+      <a href="/#ueber-mich">Über mich</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/#servus" class="btn">Servus sagen</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="container hero">
+    <h1 class="display">Passt nicht zusammen.<br><span>Passt perfekt.</span></h1>
+    <p>Apps, Klamotten und alles, was uns sonst no einfällt – jedes Projekt a eigene Socke, alle an einer Leine.</p>
+  </section>
+
+  <section id="projekte" class="clothesline" aria-labelledby="projekte-titel">
+    <h2 id="projekte-titel" class="visually-hidden">Projekte</h2>
+    <svg class="clothesline__rope" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-10 30 Q720 120 1450 20" fill="none" stroke="#0A0A0A" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <div class="container clothesline__items">
+
+      <!-- Places4Kids: Link eintragen, sobald die Domain steht -->
+      <a href="#" class="sock sock--p4k" style="--r:-3deg; --a:3deg; --d:4.2s; --dl:0s; --mt:8px">
+        <div class="sock__peg"></div>
+        <div class="sock__card">
+          <span class="sock__label">App · iPhone</span>
+          <span class="sock__title">Places4Kids</span>
+          <span class="sock__text">Orte, an denen Kinder willkommen sind.</span>
+          <span class="sock__more">Anschaun →</span>
+        </div>
+      </a>
+
+      <!-- VINWEAR: Link eintragen -->
+      <a href="#" class="sock sock--vin" style="--r:2deg; --a:-3.5deg; --d:5s; --dl:-1.3s; --mt:40px">
+        <div class="sock__peg"></div>
+        <div class="sock__card">
+          <span class="sock__label">Label · Klamotten</span>
+          <span class="sock__title">VINWEAR</span>
+          <span class="sock__text">Shirts mit deinem Auto drauf.</span>
+          <span class="sock__more">Anschaun →</span>
+        </div>
+      </a>
+
+      <a href="https://meinwunschist.de" class="sock sock--mwi" style="--r:-1.5deg; --a:3deg; --d:4.6s; --dl:-2.4s; --mt:44px">
+        <div class="sock__peg"></div>
+        <div class="sock__card">
+          <span class="sock__label">App · Tablet</span>
+          <span class="sock__title">Mein Wunsch ist&nbsp;…</span>
+          <span class="sock__text">Wunschzettel basteln – digital.</span>
+          <span class="sock__more">Anschaun →</span>
+        </div>
+      </a>
+
+      <a href="/blog.html" class="sock sock--next" style="--r:4deg; --a:-4deg; --d:5.4s; --dl:-0.7s; --mt:12px">
+        <div class="sock__peg"></div>
+        <div class="sock__card">
+          <span class="sock__label">Die nächste Socke</span>
+          <span class="sock__title">Kimmt boid.</span>
+          <span class="sock__text">Was als Nächstes an der Leine hängt, liest du zuerst im Blog.</span>
+          <span class="sock__more">Zum Blog →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Über mich: Foto als /assets/img/ich.jpg ablegen und den Platzhalter unten ersetzen -->
+  <section id="ueber-mich" class="me" aria-labelledby="me-titel">
+    <div class="container">
+      <div class="me__photo">
+        <div class="sock__peg"></div>
+        <div class="me__placeholder">
+          <img src="/assets/img/socks_ink.png" alt="">
+          <span>Dein Foto kommt hier hin</span>
+        </div>
+        <!-- <img src="/assets/img/ich.jpg" alt="[Dein Name]" width="920" height="1150"> -->
+      </div>
+      <div class="me__text">
+        <span class="eyebrow">Über mich</span>
+        <h2 id="me-titel" class="display h2">Servus, i bin <span class="placeholder">[Dein Name]</span>.</h2>
+        <p>Hauptberuflich bin ich in der IT daheim. Nebenbei bau ich Sachen, die mir selber fehlen: Apps für Familien, Shirts mit Autos drauf und was mir sonst no einfällt.</p>
+        <p class="placeholder">[Ein, zwei Sätze zu dir: Woher kommst du, was treibt dich an, warum zwei verschiedene Socken?]</p>
+        <ul class="me__facts">
+          <li>IT-Mensch</li>
+          <li>App-Bastler</li>
+          <li class="placeholder">[Ort]</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="warum-titel">
+    <div class="container">
+      <div class="about__intro">
+        <img src="/assets/img/socks_ink.png" alt="" width="401" height="333">
+        <h2 id="warum-titel" class="display h2">Warum zwei verschiedene Socken?</h2>
+        <p>Weil zweimal dasselbe einfach zu langweilig is.</p>
+      </div>
+      <div class="about__grid">
+        <div class="point">
+          <span class="point__nr">01</span>
+          <h3>Kloa, aber oho</h3>
+          <p>Jedes Projekt löst a konkretes Problem.</p>
+        </div>
+        <div class="point">
+          <span class="point__nr">02</span>
+          <h3>Selber gmacht</h3>
+          <p>Idee, Design, Code, Druck – alles aus oaner Hand.</p>
+        </div>
+        <div class="point">
+          <span class="point__nr">03</span>
+          <h3>Ohne Zwang</h3>
+          <p>Neues kimmt, wenn’s gut is – ned nach Kalender.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section" aria-labelledby="blog-titel">
+    <div class="section__head">
+      <h2 id="blog-titel" class="display h2">Neis aus der Werkstatt</h2>
+      <a href="/blog.html">Alle Beiträge →</a>
+    </div>
+    <div class="posts">
+      <a href="/blog/a-leine-vui-socken.html" class="post-card">
+        <div class="post-card__img post-card__img--tds"><img src="/assets/img/socks_white.png" alt=""></div>
+        <span class="post-card__meta">Two Different Socks · <span class="placeholder">[Datum]</span></span>
+        <h3>A Leine, vui Socken: warum ich alles unter oa Dach pack</h3>
+      </a>
+      <a href="/blog.html" class="post-card">
+        <div class="post-card__img post-card__img--mwi"></div>
+        <span class="post-card__meta">Mein Wunsch ist … · <span class="placeholder">[Datum]</span></span>
+        <h3>Schere, Kleber, Katalog: der Wunschzettel wird digital</h3>
+      </a>
+      <a href="/blog.html" class="post-card">
+        <div class="post-card__img post-card__img--vin"></div>
+        <span class="post-card__meta">VINWEAR · <span class="placeholder">[Datum]</span></span>
+        <h3>Dei Auto aufm Shirt: so entsteht a VINWEAR-Motiv</h3>
+      </a>
+    </div>
+  </section>
+
+  <section id="servus" class="container servus" aria-labelledby="servus-titel">
+    <div class="servus__box">
+      <div>
+        <h2 id="servus-titel" class="display">Servus sagen.</h2>
+        <p>Idee, Kooperation oder oafach a Hallo – schreib ma.</p>
+      </div>
+      <a href="mailto:servus@twodifferentsocks.de" class="btn btn--light">servus@twodifferentsocks.de</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <a href="/" class="logo-stamp"><img src="/assets/img/logo_ink.png" alt="Two Different Socks – zur Startseite" width="1071" height="360"></a>
+    <nav aria-label="Rechtliches">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="https://instagram.com/" rel="noopener">Instagram</a>
+    </nav>
+    <small>© 2026 Two Different Socks</small>
+  </div>
+</footer>
+
+</body>
+</html>

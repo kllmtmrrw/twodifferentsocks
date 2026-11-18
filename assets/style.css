@@ -1,0 +1,252 @@
+/* Two Different Socks – Stylesheet
+   Farben: Basis Schwarz-Weiß, jede Projektkarte hat ihre eigene Markenfarbe. */
+
+:root {
+  --ink: #0A0A0A;
+  --white: #FFFFFF;
+  --grey-50: #F4F4F4;
+  --grey-300: #BDBDBD;
+  --grey-500: #8A8A8A;
+  --grey-600: #666666;
+  --grey-700: #4D4D4D;
+  --line: #E0E0E0;
+
+  /* Projektfarben */
+  --p4k: #1B8048;        /* Places4Kids – SOS-Grün */
+  --vin-yellow: #FFD400; /* VINWEAR – Gelb-Akzent */
+  --kraft: #CBA57C;      /* Mein Wunsch ist … – Kraftpapier */
+  --kraft-ink: #2A1D12;
+  --mwi-red: #B3122E;    /* Mein Wunsch ist … – Rot */
+
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --max: 1280px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--ink); }
+a:hover { color: #555; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
+
+.container { max-width: var(--max); margin: 0 auto; padding-inline: 24px; }
+.muted { color: var(--grey-700); }
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin: 0;
+}
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Header ---------- */
+.site-header .container {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+  gap: 16px; padding-block: 28px;
+}
+.logo-stamp { display: block; border: 2px solid var(--ink); padding: 8px 12px; line-height: 0; }
+.logo-stamp img { height: 52px; width: auto; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.nav a { padding: 12px 14px; font-weight: 500; text-decoration: none; }
+.nav a[aria-current="page"] { font-weight: 600; text-decoration: underline; text-underline-offset: 6px; }
+.btn {
+  display: inline-block; padding: 12px 20px; border-radius: 999px; font-weight: 600;
+  text-decoration: none; background: var(--ink); color: var(--white); border: 0;
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+.btn:hover { color: var(--white); background: #333; }
+.btn--light { background: var(--white); color: var(--ink); }
+.btn--light:hover { background: var(--grey-50); color: var(--ink); }
+.nav .btn { padding: 12px 20px; margin-left: 4px; }
+
+/* ---------- Hero ---------- */
+.hero { padding-top: 56px; display: flex; flex-direction: column; gap: 24px; }
+.hero h1 { font-size: clamp(52px, 8vw, 112px); line-height: 0.92; }
+.hero h1 span { color: var(--grey-500); }
+.hero p { margin: 0; max-width: 600px; font-size: 20px; line-height: 1.55; color: var(--grey-700); }
+
+/* ---------- Wäscheleine ---------- */
+.clothesline { position: relative; padding: 40px 0 96px; }
+.clothesline__rope { position: absolute; left: 0; top: 40px; width: 100%; height: 120px; }
+.clothesline__items {
+  position: relative; padding-top: 24px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px;
+}
+.sock {
+  display: block; text-decoration: none;
+  transform-origin: 50% 0;
+  transform: rotate(var(--r, 0deg));
+  animation: sway var(--d, 4.5s) ease-in-out infinite;
+  animation-delay: var(--dl, 0s);
+  margin-top: var(--mt, 0);
+}
+.sock:hover { animation-play-state: paused; }
+@keyframes sway {
+  0%, 100% { transform: rotate(var(--r, 0deg)); }
+  50% { transform: rotate(calc(var(--r, 0deg) + var(--a, 3deg))); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sock { animation: none; }
+  html { scroll-behavior: auto; }
+}
+.sock__peg {
+  width: 16px; height: 44px; background: var(--grey-300); border-radius: 3px;
+  margin: 0 auto -20px; position: relative;
+}
+.sock__card {
+  border-radius: 24px; padding: 28px; min-height: 280px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+}
+.sock__label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.sock__title { font-family: var(--font-display); font-weight: 800; font-size: 38px; letter-spacing: -0.03em; line-height: 1; }
+.sock__text { font-size: 16px; line-height: 1.45; }
+/* Gleicher Button auf jeder Karte, jeweils in der Projektfarbe */
+.sock__more {
+  align-self: flex-start; padding: 10px 16px; border-radius: 999px;
+  font-size: 14px; font-weight: 600;
+}
+
+.sock--p4k .sock__card { background: var(--p4k); color: var(--white); }
+.sock--p4k .sock__more { background: var(--white); color: var(--p4k); }
+
+.sock--vin .sock__card { background: var(--ink); color: var(--white); }
+.sock--vin .sock__label { color: var(--vin-yellow); }
+.sock--vin .sock__more { background: var(--vin-yellow); color: var(--ink); }
+
+.sock--mwi .sock__card { background: var(--kraft); color: var(--kraft-ink); }
+.sock--mwi .sock__label {
+  align-self: flex-start; padding: 4px 10px; background: var(--mwi-red); color: var(--white);
+  font-size: 12px; transform: rotate(-2deg);
+}
+.sock--mwi .sock__more { background: var(--mwi-red); color: var(--white); }
+
+.sock--next .sock__card { border: 2px dashed var(--ink); background: var(--white); color: var(--ink); }
+.sock--next .sock__more { background: var(--ink); color: var(--white); }
+
+/* ---------- Über mich ---------- */
+.me .container { padding-block: 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center; }
+.me__photo { flex: 1 1 320px; min-width: 0; max-width: 460px; position: relative; }
+.me__photo img, .me__photo .me__placeholder {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 28px;
+  transform: rotate(-2deg); box-shadow: 0 0 0 2px var(--ink);
+}
+.me__placeholder {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  background: var(--grey-50); color: var(--grey-600); font-weight: 600; text-align: center; padding: 24px;
+}
+.me__placeholder img { width: 96px; transform: none; box-shadow: none; aspect-ratio: auto; border-radius: 0; }
+.me__photo .sock__peg { position: absolute; top: -22px; left: 50%; margin: 0 0 0 -8px; z-index: 1; }
+.me__text { flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.me__text .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-600); }
+.me__text p { margin: 0; font-size: 19px; line-height: 1.65; color: var(--grey-700); }
+.me__facts { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 4px 0 0; list-style: none; }
+.me__facts li { padding: 8px 14px; border-radius: 999px; border: 2px solid var(--ink); font-size: 14px; font-weight: 600; }
+
+/* ---------- Über uns ---------- */
+.about { background: var(--grey-50); }
+.about .container { padding-block: 88px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start; }
+.about__intro { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.about__intro img { width: 110px; }
+.about__intro p { margin: 0; font-size: 18px; line-height: 1.6; color: var(--grey-700); }
+.h2 { font-size: clamp(36px, 4vw, 54px); letter-spacing: -0.03em; line-height: 1.02; }
+.about__grid {
+  flex: 999 1 560px; min-width: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px;
+}
+.point { padding: 28px; border-radius: 24px; background: var(--white); display: flex; flex-direction: column; gap: 10px; }
+.point__nr { font-family: var(--font-display); font-weight: 800; font-size: 34px; color: var(--grey-500); }
+.point h3 { margin: 0; font-size: 20px; font-weight: 600; }
+.point p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--grey-700); }
+
+/* ---------- Blog-Karten ---------- */
+.section { padding-block: 88px; display: flex; flex-direction: column; gap: 36px; }
+.section__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; }
+.section__head a { font-weight: 600; padding: 12px 0; }
+.posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+.post-card { display: flex; flex-direction: column; gap: 14px; text-decoration: none; }
+.post-card[hidden] { display: none; }
+.post-card__img {
+  height: 200px; border-radius: 24px; background: var(--ink);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.post-card__img img { height: 110px; width: auto; }
+.post-card__img--p4k { background: var(--p4k); }
+.post-card__img--vin { background: var(--ink); border-bottom: 10px solid var(--vin-yellow); }
+.post-card__img--mwi { background: var(--kraft); }
+.post-card__img--tds { background: var(--ink); }
+.post-card__meta { font-size: 13px; font-weight: 600; color: var(--grey-600); }
+.post-card h3 { margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3; }
+
+/* ---------- Servus / Kontakt ---------- */
+.servus { padding-bottom: 88px; }
+.servus__box {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px;
+  padding: clamp(32px, 5vw, 56px); border-radius: 32px; background: var(--ink); color: var(--white);
+}
+.servus__box > div { flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.servus__box h2 { font-size: clamp(40px, 5vw, 72px); }
+.servus__box p { margin: 0; font-size: 18px; line-height: 1.55; color: var(--grey-300); }
+.servus__box .btn { padding: 18px 28px; font-size: 17px; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--line); }
+.site-footer .container {
+  padding-block: 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px;
+}
+.site-footer .logo-stamp img { height: 44px; width: auto; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 4px; }
+.site-footer nav a { padding: 12px; color: var(--grey-700); }
+.site-footer small { display: block; width: 100%; color: var(--grey-600); font-size: 13px; }
+
+/* ---------- Blog-Übersicht ---------- */
+.page-head { padding-top: 48px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 20px; }
+.page-head h1 { font-size: clamp(52px, 7vw, 100px); }
+.page-head h1 span { color: var(--grey-500); }
+.page-head p { margin: 0; max-width: 600px; font-size: 19px; line-height: 1.55; color: var(--grey-700); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 12px; }
+.filter {
+  padding: 12px 18px; border-radius: 999px; font: inherit; font-size: 15px; font-weight: 600;
+  cursor: pointer; border: 2px solid var(--ink); background: transparent; color: var(--ink);
+}
+.filter[aria-pressed="true"] { background: var(--ink); color: var(--white); }
+.blog-list { padding-bottom: 80px; }
+.empty { padding: 40px 0; font-size: 18px; color: var(--grey-700); }
+
+.newsletter { padding-bottom: 88px; }
+.newsletter__box {
+  display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between;
+  padding: clamp(32px, 5vw, 48px); border-radius: 32px; background: var(--ink); color: var(--white);
+}
+.newsletter__box > div { flex: 999 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.newsletter__box h2 { font-size: clamp(32px, 3.6vw, 48px); }
+.newsletter__box p { margin: 0; font-size: 17px; line-height: 1.55; color: var(--grey-300); }
+
+/* ---------- Beitrag & Textseiten ---------- */
+.article { max-width: 760px; margin: 0 auto; padding: 48px 24px 88px; }
+.article__meta { font-size: 14px; font-weight: 600; color: var(--grey-600); }
+.article h1 { font-size: clamp(40px, 6vw, 72px); margin: 16px 0 32px; }
+.article__cover { height: clamp(220px, 40vw, 380px); border-radius: 28px; margin-bottom: 40px; }
+.prose { font-size: 19px; line-height: 1.7; }
+.prose h2 { font-family: var(--font-display); font-weight: 800; font-size: 32px; letter-spacing: -0.02em; margin: 48px 0 12px; line-height: 1.1; }
+.prose h3 { font-size: 22px; margin: 32px 0 8px; }
+.prose p, .prose ul, .prose ol { margin: 0 0 20px; }
+.prose img { border-radius: 20px; margin: 32px 0; }
+.prose blockquote {
+  margin: 32px 0; padding-left: 24px; border-left: 4px solid var(--ink);
+  font-family: var(--font-display); font-size: 26px; line-height: 1.3; font-weight: 700;
+}
+.back { display: inline-block; padding: 12px 0; font-weight: 600; }
+.placeholder { background: #FFF6BF; padding: 0 4px; }

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog – Two Different Socks</title>
+  <meta name="description" content="Neis aus der Werkstatt: wie die Projekte von Two Different Socks entstehen.">
+  <link rel="icon" href="/assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo-stamp"><img src="/assets/img/logo_ink.png" alt="Two Different Socks – zur Startseite" width="1071" height="360"></a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/#projekte">Projekte</a>
+      <a href="/#ueber-mich">Über mich</a>
+      <a href="/blog.html" aria-current="page">Blog</a>
+      <a href="/#servus" class="btn">Servus sagen</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="container page-head">
+    <h1 class="display">Neis aus der<br><span>Werkstatt.</span></h1>
+    <p>Wie Projekte entstehen, was funktioniert – und was ned.</p>
+    <div class="filters" role="group" aria-label="Nach Projekt filtern">
+      <button type="button" class="filter" data-filter="alle" aria-pressed="true">Alle</button>
+      <button type="button" class="filter" data-filter="tds" aria-pressed="false">Two Different Socks</button>
+      <button type="button" class="filter" data-filter="p4k" aria-pressed="false">Places4Kids</button>
+      <button type="button" class="filter" data-filter="vin" aria-pressed="false">VINWEAR</button>
+      <button type="button" class="filter" data-filter="mwi" aria-pressed="false">Mein Wunsch ist …</button>
+    </div>
+  </section>
+
+  <section class="container blog-list" aria-label="Beiträge">
+    <!--
+      NEUER BEITRAG:
+      1. Datei blog/vorlage.html kopieren und umbenennen (z. B. blog/mein-titel.html)
+      2. Hier oben einen neuen <a class="post-card"> Block einfügen
+      3. data-cat: tds, p4k, vin oder mwi
+    -->
+    <div class="posts">
+      <a href="/blog/a-leine-vui-socken.html" class="post-card" data-cat="tds">
+        <div class="post-card__img post-card__img--tds"><img src="/assets/img/socks_white.png" alt=""></div>
+        <span class="post-card__meta">Two Different Socks · <span class="placeholder">[Datum]</span></span>
+        <h3>A Leine, vui Socken: warum ich alles unter oa Dach pack</h3>
+      </a>
+      <a href="#" class="post-card" data-cat="mwi">
+        <div class="post-card__img post-card__img--mwi"></div>
+        <span class="post-card__meta">Mein Wunsch ist … · <span class="placeholder">[Datum]</span></span>
+        <h3>Schere, Kleber, Katalog: der Wunschzettel wird digital</h3>
+      </a>
+      <a href="#" class="post-card" data-cat="vin">
+        <div class="post-card__img post-card__img--vin"></div>
+        <span class="post-card__meta">VINWEAR · <span class="placeholder">[Datum]</span></span>
+        <h3>Dei Auto aufm Shirt: so entsteht a VINWEAR-Motiv</h3>
+      </a>
+      <a href="#" class="post-card" data-cat="p4k">
+        <div class="post-card__img post-card__img--p4k"></div>
+        <span class="post-card__meta">Places4Kids · <span class="placeholder">[Datum]</span></span>
+        <h3><span class="placeholder">[Titel: Wie Places4Kids entstanden is]</span></h3>
+      </a>
+    </div>
+    <p class="empty" hidden>Do hängt no nix. Kimmt boid.</p>
+  </section>
+
+  <section class="container newsletter" aria-labelledby="nl-titel">
+    <div class="newsletter__box">
+      <div>
+        <h2 id="nl-titel" class="display">Neue Socken zuerst sehen</h2>
+        <p>Folg uns auf Instagram – da hängt’s zuerst.</p>
+      </div>
+      <a href="https://instagram.com/" class="btn btn--light" rel="noopener">Zu Instagram</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <a href="/" class="logo-stamp"><img src="/assets/img/logo_ink.png" alt="Two Different Socks – zur Startseite" width="1071" height="360"></a>
+    <nav aria-label="Rechtliches">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="https://instagram.com/" rel="noopener">Instagram</a>
+    </nav>
+    <small>© 2026 Two Different Socks</small>
+  </div>
+</footer>
+
+<script>
+  // Blog-Filter
+  const buttons = document.querySelectorAll('.filter');
+  const cards = document.querySelectorAll('.post-card[data-cat]');
+  const empty = document.querySelector('.empty');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      let shown = 0;
+      cards.forEach((c) => {
+        const show = f === 'alle' || c.dataset.cat === f;
+        c.hidden = !show;
+        if (show) shown++;
+      });
+      empty.hidden = shown > 0;
+    });
+  });
+</script>
+</body>
+</html>
