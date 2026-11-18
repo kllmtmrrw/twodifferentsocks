@@ -133,3 +133,4 @@ code { font-family: var(--mono); font-size: .92em; }
 @media (prefers-reduced-motion: reduce) {
   .proj, .icon-btn.spin svg { transition: none; animation: none; }
 }
+.side__logout { margin-top: 24px; color: var(--grey-700); border-top: 1px solid var(--line); border-radius: 0 !important; padding-top: 16px !important; }

@@ -179,6 +179,7 @@
       }
     });
     html += '<div class="side__group">Du</div><a href="#todos" data-nav="todos">To-dos<i class="dot dot--warn"></i></a>';
+    html += '<a href="/hq/logout" class="side__logout">Abmelden</a>';
     side.innerHTML = html;
   }
 

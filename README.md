@@ -54,6 +54,18 @@ Vor dem Livegang lokal einbinden:
 Alles mit gelbem Hintergrund (`class="placeholder"`) ist noch auszufüllen: Name, Ort, Datum, Impressum, Datenschutz,
 Links zu Places4Kids und VINWEAR (`href="#"` in `index.html`), Instagram-Link.
 
+### Passwortschutz
+
+`/hq` ist serverseitig geschützt durch die Edge Function `netlify/edge-functions/hq-auth.ts`
+(Login-Seite, Cookie 30 Tage, `/hq/logout` meldet ab). In Netlify unter
+**Site configuration → Environment variables** anlegen:
+
+- `HQ_PASSWORD` – das Login-Passwort
+- `HQ_SECRET` – langer Zufallswert (z. B. 40+ Zeichen), signiert das Cookie
+
+Fehlt eins, bleibt `/hq` zu (503). Edge Functions laufen nur, wenn Netlify aus dem
+Git-Repo baut – nicht bei Drag-&-Drop-Uploads.
+
 ## HQ (`/hq`)
 
 Internes Dashboard unter `twodifferentsocks.de/hq`: Lagebericht über alle Projekte, Projekte an der Leine
