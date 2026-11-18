@@ -53,3 +53,21 @@ Vor dem Livegang lokal einbinden:
 
 Alles mit gelbem Hintergrund (`class="placeholder"`) ist noch auszufüllen: Name, Ort, Datum, Impressum, Datenschutz,
 Links zu Places4Kids und VINWEAR (`href="#"` in `index.html`), Instagram-Link.
+
+## HQ (`/hq`)
+
+Internes Dashboard unter `twodifferentsocks.de/hq`: Lagebericht über alle Projekte, Projekte an der Leine
+(VINWEAR verlinkt auf sein eigenes HQ) und für „Mein Wunsch ist …“ die Teams mit ihren Agenten
+(Paula · Vertrieb & Partner, Mia · Marketing, Lotte · Design, Ben · IT & Technik, Theo · Finanzen, Klara · Recht).
+
+```
+hq/index.html   Gerüst
+hq/hq.css       Look (Schwarz-Weiß, Projekte in ihren Farben, keine externen Schriften)
+hq/hq.js        baut die Seite aus den Daten
+hq/data.json    alle Inhalte – nur diese Datei ändern, um Zahlen und Meldungen zu aktualisieren
+```
+
+Die Seite ist per `noindex` (Meta-Tag + `X-Robots-Tag` in `netlify.toml`) von Suchmaschinen ausgenommen,
+aber **nicht passwortgeschützt**. Deshalb stehen in `data.json` keine Geheimnisse: keine Zugangsdaten,
+keine E-Mails oder Telefonnummern, keine Umsätze anderer Projekte. Ein echter Login (Netlify Identity
+oder eine Function wie beim VINWEAR-HQ) kann später dazukommen.

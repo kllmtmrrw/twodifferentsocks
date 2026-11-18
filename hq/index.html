@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>HQ · Two Different Socks</title>
+  <link rel="icon" href="/assets/img/favicon.png">
+  <link rel="stylesheet" href="/hq/hq.css">
+</head>
+<body>
+<div class="hq">
+  <header class="top">
+    <a href="/" class="brand"><img src="/assets/img/logo_ink.png" alt="Two Different Socks" width="1071" height="360"><span>HQ</span></a>
+    <div class="top__right">
+      <span class="stand" id="stand"><i class="dot"></i>Lade …</span>
+      <button class="icon-btn" id="reload" type="button" aria-label="Aktualisieren">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <nav class="side" id="side" aria-label="HQ-Navigation"></nav>
+
+  <main class="main" id="main">
+    <p class="kicker" id="today"></p>
+    <h1 class="hello" id="hello">Servus.</h1>
+    <p class="summary" id="summary"></p>
+
+    <section class="kpis" id="kpis" aria-label="Kennzahlen"></section>
+
+    <section aria-labelledby="proj-title">
+      <h2 class="section-title" id="proj-title">Projekte an der Leine</h2>
+      <div class="projects" id="projects"></div>
+    </section>
+
+    <div id="project-sections"></div>
+
+    <section id="todos" aria-labelledby="todo-title">
+      <h2 class="section-title" id="todo-title">To-dos für dich</h2>
+      <ol class="todos" id="todo-list"></ol>
+    </section>
+
+    <footer class="foot">
+      Daten aus <code>/hq/data.json</code>. Diese Seite enthält keine Geheimnisse: keine Zugangsdaten, keine Umsätze anderer Projekte.
+      Ein echter Login (z.&nbsp;B. Netlify Identity oder eine Function wie bei VINWEAR) kann folgen.
+    </footer>
+  </main>
+</div>
+<script src="/hq/hq.js"></script>
+</body>
+</html>
