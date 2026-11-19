@@ -18,3 +18,8 @@
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
     Cache-Control = "no-cache"
+
+[[redirects]]
+  from = "/blog/a-leine-vui-socken.html"
+  to = "/blog/eine-leine-viele-socken.html"
+  status = 301

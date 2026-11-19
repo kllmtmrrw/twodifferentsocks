@@ -33,7 +33,7 @@ Später besser: Ordner in ein GitHub-Repo legen und Cloudflare Pages damit verbi
 
 1. `blog/vorlage.html` kopieren, z. B. als `blog/mein-titel.html`, und die markierten Stellen ausfüllen.
 2. In `blog.html` oben einen neuen `post-card`-Block einfügen (`data-cat`: `tds`, `p4k`, `vin` oder `mwi`).
-3. Optional auch auf der Startseite unter „Neis aus der Werkstatt“ austauschen.
+3. Optional auch auf der Startseite unter „Neues aus der Werkstatt“ austauschen.
 
 ## Über-mich-Foto
 
