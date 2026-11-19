@@ -57,8 +57,9 @@ a:hover { color: #555; }
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
   gap: 16px; padding-block: 28px;
 }
-.logo-stamp { display: block; border: 2px solid var(--ink); padding: 8px 12px; line-height: 0; }
-.logo-stamp img { height: 52px; width: auto; }
+/* Rahmen und Wäscheleine sind direkt im Logo-Bild */
+.logo-stamp { display: block; line-height: 0; }
+.logo-stamp img { height: 72px; width: auto; }
 .nav { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
 .nav a { padding: 12px 14px; font-weight: 500; text-decoration: none; }
 .nav a[aria-current="page"] { font-weight: 600; text-decoration: underline; text-underline-offset: 6px; }
@@ -206,7 +207,7 @@ a:hover { color: #555; }
 .site-footer .container {
   padding-block: 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px;
 }
-.site-footer .logo-stamp img { height: 44px; width: auto; }
+.site-footer .logo-stamp img { height: 60px; width: auto; }
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 4px; }
 .site-footer nav a { padding: 12px; color: var(--grey-700); }
 .site-footer small { display: block; width: 100%; color: var(--grey-600); font-size: 13px; }
