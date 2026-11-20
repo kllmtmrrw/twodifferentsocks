@@ -144,6 +144,7 @@ a:hover { color: #555; }
   width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 28px;
   transform: rotate(-2deg); box-shadow: 0 0 0 2px var(--ink);
 }
+.me__photo .me__portrait { aspect-ratio: auto; height: auto; object-fit: contain; background: var(--white); }
 .me__placeholder {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
   background: var(--grey-50); color: var(--grey-600); font-weight: 600; text-align: center; padding: 24px;
